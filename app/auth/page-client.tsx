@@ -3,6 +3,8 @@
 import styles from "./auth.module.scss";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Input from "@/components/ui/input";
+import Button from "@/components/ui/button";
 
 const phoneRegex = /^09\d{9}$/;
 
@@ -35,17 +37,4 @@ export default function PageClient() {
       </div>
     </div>
   );
-}
-
-function Input({ value, onChange, label }: { value: string; onChange: (v: string) => void; label: string }) {
-  return (
-    <div className={styles.inputGroup}>
-      <label>{label}</label>
-      <input value={value} onChange={(e) => onChange(e.target.value)} placeholder="09xxxxxxxxx" />
-    </div>
-  );
-}
-
-function Button({ onClick, label }: { onClick: () => void; label: string }) {
-  return <button className={styles.button} onClick={onClick}>{label}</button>;
 }
